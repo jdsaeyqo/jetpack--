@@ -2,35 +2,38 @@ package com.example.room_ex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
-import androidx.room.Room
-import com.example.room_ex.model.Todo
-import com.example.room_ex.model.TodoDatabase
-import kotlinx.android.synthetic.main.activity_main.*
-
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.room_ex.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
+        //라이브 데이터 활용하기 위해 설정
+        binding.lifecycleOwner = this
 
 
-        val db = Room.databaseBuilder(
-            applicationContext,
-            TodoDatabase::class.java, "database-name"
-        ).allowMainThreadQueries()
-            .build()
-
-        db.todoDao().getAll().observe(this, Observer {
-            text_view.text = it.toString()
-        })
+        val mainViewModel = ViewModelProvider(this,MainViewModel.Factory(application)).get(MainViewModel::class.java)
 
 
+        binding.viewModel = mainViewModel
 
 
-        btn_add.setOnClickListener {
-            db.todoDao().insert(Todo(0, edit_todo.text.toString()))
+//        mainViewModel.getAll().observe(this, Observer {
+//            text_view.text = it.toString()
+//        })
 
-        }
+
+//        btn_add.setOnClickListener {
+//            lifecycleScope.launch(Dispatchers.IO) {
+//                mainViewModel.insert(edit_todo.text.toString())
+//            }
+//        }
 
     }
 }
