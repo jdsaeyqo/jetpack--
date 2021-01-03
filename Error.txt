@@ -1,0 +1,14 @@
+ - AAC ViewModel 생성자 파라미터 넘기기, Cannot create an instance of class ViewModel 해결 방법
+
+Caused by: java.lang.RuntimeException: Cannot create an instance of class ...ViewModel
+ViewModel 인스턴스를 생성하지 못하여 에러가 발생했습니다.
+
+ViewModelProvider()에 파라미터로 Factory 객체를 넘겨주지 않아서, 
+ViewModel 이 제대로 인스턴스화 되지 못했던 이유였습니다. 
+
+ViewModel에 파라미터를 넘기기 위해서, 파라미터를 포함한 Factory 객체를 생성하여 
+ViewModelProvider에 같이 넘겨주게 되면, ViewModel에서 우리가 전달한 파라미터를 
+받을 수 있음
+
+
+ - 데이터 바인딩(Data Binding) 에러날 경우(data binding error : cannot find symbol class .. Impl’)
