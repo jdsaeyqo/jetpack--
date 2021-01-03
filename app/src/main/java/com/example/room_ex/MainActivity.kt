@@ -7,8 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.room_ex.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding =
@@ -22,18 +20,6 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.viewModel = mainViewModel
-
-
-//        mainViewModel.getAll().observe(this, Observer {
-//            text_view.text = it.toString()
-//        })
-
-
-//        btn_add.setOnClickListener {
-//            lifecycleScope.launch(Dispatchers.IO) {
-//                mainViewModel.insert(edit_todo.text.toString())
-//            }
-//        }
 
     }
 }

@@ -5,7 +5,6 @@ import androidx.lifecycle.*
 import androidx.room.Room
 import com.example.room_ex.model.Todo
 import com.example.room_ex.model.TodoDatabase
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -31,7 +30,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         todos = getAll()
     }
 
-
     fun getAll(): LiveData<List<Todo>> {
         return db.todoDao().getAll()
     }
@@ -42,4 +40,5 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
 
     }
+
 }
