@@ -11,7 +11,7 @@
 
  입력 전 | 입력후
  :------:|:------:
- ![image1](https://github.com/jdsaeyqo/toy-room/blob/master/app/src/main/res/drawable/_Room_toy1.jpg)|![image2](https://github.com/jdsaeyqo/toy-room/blob/master/app/src/main/res/drawable/_Room_toy2.jpg)  
+ ![image1](https://github.com/jdsaeyqo/toy-room/blob/master/app/src/main/res/drawable/room_toy1.jpg)|![image2](https://github.com/jdsaeyqo/toy-room/blob/master/app/src/main/res/drawable/room_toy2.jpg)  
  
  - 메모 입력 시 아래 텍스트뷰에 메모 추가
  - Todo Data Class에 Room 적용하여 내부 데이터베이스 저장
